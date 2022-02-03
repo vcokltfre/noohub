@@ -1,7 +1,6 @@
-from ormar import BigInteger, Boolean, ForeignKey, Model, String
+from ormar import BigInteger, Boolean, Model, String
 
 from .metadata import database, metadata
-from .user import User
 
 
 class Key(Model):
@@ -12,7 +11,7 @@ class Key(Model):
 
     # pyright: reportGeneralTypeIssues=false
     id: int = BigInteger(primary_key=True, autoincrement=False)
-    user: User = ForeignKey(User)
+    user: str = String(max_length=255)
     name: str = String(max_length=255)
     project: str = String(max_length=255, default="*")
     active: bool = Boolean(default=True)

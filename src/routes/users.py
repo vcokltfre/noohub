@@ -3,9 +3,8 @@ from re import compile
 from fastapi import APIRouter, HTTPException, Request
 from ormar import NoMatch
 
-from src.impl.utils import Noofile
 from src.impl.database import Key, Project, User
-from src.impl.utils import Authenticator
+from src.impl.utils import Authenticator, Noofile
 
 from .models import KeyRequest, KeyResponse, KeysResponse, ProjectResponse, UserRequest
 
